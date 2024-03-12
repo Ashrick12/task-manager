@@ -1,5 +1,7 @@
 # Task Manager
 
+<img src=https://i.imgur.com/JQeWudf.png width=500>
+
 ## Overview
 Task Manager is a web application that allows users to manage their daily, weekly, and monthly tasks. The application is built using Flask.
 
