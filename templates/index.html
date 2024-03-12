@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Task Manager</title>
+      <link
+         rel="stylesheet"
+         href=" {{ url_for('static', filename='styles/style.css') }}"
+      />
+      <script
+         type="text/javascript"
+         src=" {{ url_for('static', filename='js/task.js')}}"
+      ></script>
+   </head>
+   <body>
+      <h1>Task Manager</h1>
+      <hr />
+      <form>
+         <fieldset>
+            <legend>Daily Tasks</legend>
+            {% for task in daily %}
+            <p>
+               <input
+                  type="checkbox"
+                  name="{{task[0]}}"
+                  id="{{task[0]}}"
+                  onclick="onCheck(this)"
+               />
+               <label for="{{task[0]}}" value="{{task[0]}}-val"
+                  >{{task[0]}}</label
+               >
+            </p>
+            {% endfor %}
+         </fieldset>
+      </form>
+      <form>
+         <fieldset>
+            <legend>Weekly Tasks</legend>
+            {% for task in weekly %}
+            <p>
+               <input
+                  type="checkbox"
+                  name="{{task[0]}}"
+                  id="{{task[0]}}"
+                  onclick="onCheck(this)"
+               />
+               <label for="{{task[0]}}" value="{{task[0]}}-val"
+                  >{{task[0]}}</label
+               >
+            </p>
+            {% endfor %}
+         </fieldset>
+      </form>
+      <form>
+         <fieldset>
+            <legend>Monthly Tasks</legend>
+            {% for task in monthly %}
+            <p>
+               <input
+                  type="checkbox"
+                  name="{{task[0]}}"
+                  id="{{task[0]}}"
+                  onclick="onCheck(this)"
+               />
+               <label for="{{task[0]}}" value="{{task[0]}}-val"
+                  >{{task[0]}}</label
+               >
+            </p>
+            {% endfor %}
+         </fieldset>
+         <script
+            type="module"
+            src=" {{ url_for('static', filename='js/data.js')}}"
+         ></script>
+      </form>
+      <br />
+      <hr />
+      <br />
+      <form method="post">
+         <fieldset>
+            <legend>Add Task</legend>
+            <p>
+               <label for="new-task">Task:</label>
+               <input
+                  type="text"
+                  name="new-task"
+                  id="new-task"
+                  placeholder="task name"
+                  required
+                  autocomplete="off"
+               />
+            </p>
+            <input
+               list="categories"
+               type="radio"
+               name="category"
+               id="category"
+               value="daily"
+               required
+            />
+            <label for="category">Daily</label>
+            <input
+               list="categories"
+               type="radio"
+               name="category"
+               id="category"
+               value="weekly"
+            />
+            <label for="category">Weekly</label>
+            <input
+               list="categories"
+               type="radio"
+               name="category"
+               id="category"
+               value="monthly"
+            />
+            <label for="category">Monthly</label>
+            <p>
+               <button type="submit">Submit Task</button>
+            </p>
+         </fieldset>
+      </form>
+   </body>
+</html>
