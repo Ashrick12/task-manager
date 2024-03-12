@@ -12,9 +12,9 @@ Task Manager is a web application that allows users to manage their daily, weekl
 
 ## Installation and Setup
 1. Clone the repository.
-  ```
-  git clone https://github.com/Ashrick12/task-manager.git
-  ```
+    ```
+    git clone https://github.com/Ashrick12/task-manager.git
+    ```
 2. Install the required dependencies:
     ```
     pip install -r requirements.txt
